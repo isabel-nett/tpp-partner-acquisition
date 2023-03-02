@@ -7,22 +7,38 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;800&display=swap" rel="stylesheet">
     <title>Enrollment Request</title>
+    <style>
+        .btn {
+            background-color: #F8961F;
+            color: white;
+        }
+
+        .btn:hover {
+            border:1px solid #F8961F;
+            color:#F8961F;
+        }
+        .card {
+                border: none;
+                box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+                opacity: .90;
+        }
+    </style>
 </head>
 <body>
-    <div class="page" style="font-family: 'Open Sans', sans-serif;">
-        <header class="d-flex justify-content-start flex-wrap" style="padding: 50px; background-color: black;">
+    <div class="page" style="font-family: 'Open Sans', sans-serif; background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%); padding-bottom: 75px; height: 100%;">
+        <header class="d-flex justify-content-start flex-wrap" style="padding: 50px;">
             <img src="https://3playpay.com/wp-content/uploads/2022/05/TPP_logo_reversed_horz3.png" class="col-6 col-md-4 col-xl-2 me-5 mb-5" alt="Triple Play Pay Logo">
             <h2 style="color: white">Partner Enrollment Request</h2>
         </header>
-        <div class="content" style="display:flex; justify-content:center; align-items:center; margin-top: 10vh;">
-            <form class="form mb-5 mx-auto" style="display: flex; flex-direction: column; justify-content:center; gap: 35px; padding: 0px;">
-                <h4 class="offset-1 offset-lg-0">Business Details</h4>
-                <div class="container row mx-auto">
+        <div class="content p-lg-5 m-xl-5">
+            <form class="form card mx-auto d-flex flex-column gap-4 p-lg-5" style="width: 85%; padding: 50px;">
+                <h4 class="mt-5 ms-2 ms-lg-5">Business Details</h4>
+                <div class="row ms-lg-5 gap-4">
                     <div class="col-lg-5 col-12 mt-4">
                         <label for="bizNameDBA" class="form-label">Business Name / DBA</label>
                         <input type="text" class="form-control" id="biznameDBA">
                     </div>
-                    <div class="col-lg-5 offset-lg-1 col-12 mt-4">
+                    <div class="col-lg-5 col-12 mt-4">
                         <label for="bizName" class="form-label">Legal Business Name</label>
                         <input type="text" class="form-control" id="bizName">
                     </div>
@@ -30,7 +46,7 @@
                         <label for="website" class="form-label">Website</label>
                         <input type="url" class="form-control" id="website">
                     </div>
-                    <div class="col-lg-5 offset-lg-1 col-12 mt-4">
+                    <div class="col-lg-5 col-12 mt-4">
                     <label for="entity" class="form-label">Entity Type</label>
                     <select class="form-select" aria-label="Default select example" id="entity">
                         <option selected>Select</option>
@@ -40,25 +56,25 @@
                     </select>
                     </div>
                 </div>
-                <h4 class="mt-5 offset-1 offset-lg-0">Account Usage</h4>
-                <div class="container row mx-auto">
+                <h4 class="mt-5 ms-2 ms-lg-5">Account Usage</h4>
+                <div class="row ms-lg-5 gap-4">
                     <div class="col-lg-5 col-12 mt-4">
                         <label for="subs" class="form-label">Expected Number of Submerchants</label>
                         <input type="number" class="form-control" id="subs" aria-describedby="subsHelp">
                         <div id="subsHelp" class="form-text">In the next 3 months, how many merchants do you expect to have enrolled?</div>
                     </div>
-                    <div class="col-lg-5 offset-lg-1 col-12 mt-4">
-                    <label for="transactions" class="form-label">Will this partner account process transactions?</label>
-                    <select class="form-select" aria-label="Default select example" id="transactions" aria-describedby="transactionsHelp">
-                        <option selected>Select</option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
-                    </select>
-                    <div id="transactionsHelp" class="form-text">Note: Partners will always receive full merchant tools as its submerchants will.</div>
+                    <div class="col-lg-5 col-12 mt-4">
+                        <label for="transactions" class="form-label">Will this partner account process transactions?</label>
+                        <select class="form-select" aria-label="Select" id="transactions" aria-describedby="transactionsHelp">
+                            <option selected>Select</option>
+                            <option value="1">NEEDS CODES</option>
+                            <option value="2">NEEDS CODES</option>
+                        </select>
+                        <div id="transactionsHelp" class="form-text">Note: Partners will always receive full merchant tools as its submerchants will.</div>
                     </div>
                     <div class="col-lg-5 col-12 mt-4">
                         <label for="codes" class="form-label">Expected MCC Codes</label>
-                        <select class="form-select" aria-label="Default select example" id="codes" aria-describedby="codesHelp">
+                        <select class="form-select" aria-label="Select" id="codes" aria-describedby="codesHelp">
                             <option selected>Select</option>
                             <option value="1">Yes</option>
                             <option value="2">No</option>
@@ -66,13 +82,13 @@
                         <div id="codesHelp" class="form-text">Select all MCC codes that you and your submerchants will be utilizing.</div>
                     </div>
                 </div>
-                <h4 class="mt-5 offset-1 offset-lg-0">Account Contact Details</h4>
-                <div class="container row mx-auto">
+                <h4 class="mt-5 ms-2 ms-lg-5">Account Contact Details</h4>
+                <div class="row ms-lg-5 gap-4">
                     <div class="col-lg-5 col-12 mt-4">
                         <label for="firstName" class="form-label">First Name</label>
                         <input type="text" class="form-control" id="firstName">
                     </div>
-                    <div class="col-lg-5 offset-lg-1 col-12 mt-4">
+                    <div class="col-lg-5 col-12 mt-4">
                         <label for="lastName" class="form-label">Last Name</label>
                         <input type="text" class="form-control" id="lastName">
                     </div>
@@ -80,14 +96,14 @@
                         <label for="phone" class="form-label">Phone Number</label>
                         <input type="tel" class="form-control" id="phone">
                     </div>
-                    <div class="col-lg-5 offset-lg-1 col-12 mt-4">
+                    <div class="col-lg-5 col-12 mt-4 mb-5">
                         <label for="email" class="form-label">Email address</label>
                         <input type="email" class="form-control" id="email">
                     </div>
-                </div> 
-                <div class="mt-5 mb-5 text-center offset-2 offset-lg-3 col-8 col-lg-5">
-                        <p>The great thing is that the complete enrollment process can be speedily completed <strong>within one business day</strong>. </br></br>Once you submit this form, keep an eye out for our emails and you'll have this API integrated in no time.</p>
-                        <a class="btn btn-lg" style="background-color: #F8961F; color: white;" href="" id="submit">Submit</a>
+                </div>
+                <div class="mt-5 mb-5 text-center mx-auto col-8 col-lg-4" style="font-size: large;">
+                    <p>The great thing is that the full enrollment process can be speedily completed <strong>within one business day</strong>. </br></br>Once you submit this form, keep an eye out for our emails and you'll accepting payments in no time.</p>
+                    <a class="btn btn-lg" href="" id="submit">Submit</a>
                 </div>
             </form>
         </div>

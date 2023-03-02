@@ -12,23 +12,38 @@
             background-color: #F8961F;
             color: white;
         }
+
+        .btn:hover {
+            border:1px solid #F8961F;
+            color:#F8961F;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+            opacity: .85;
+        }
     </style>
 </head>
-<body>
-    <div class="page" style="width:100vw; height:100vh; display:flex; justify-content:center; align-items:center; font-family:'Open Sans', sans-serif;">
-        <div class="content" style="margin-top:50px; display:flex; flex-direction:row; align-items:flex-start; gap:30px; background-color:white; padding:50px; border-radius:10px; box-shadow:5px 7px 25px -1px #1c2236;">
-            <div class="partner" style="display:flex; flex-direction:column; align-items:flex-start; gap:8px; width:415px;">
+<body style="font-family: 'Open Sans', sans-serif; background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%); padding-bottom: 75px; height: 100vh;">
+    <header class="d-flex justify-content-start flex-wrap" style="padding: 50px;">
+        <img src="https://3playpay.com/wp-content/uploads/2022/05/TPP_logo_reversed_horz3.png" class="col-6 col-md-4 col-xl-2 me-5 mb-5" alt="Triple Play Pay Logo">
+        <h2 style="color: white">Enrollment</h2>
+    </header>
+    <h1 class="text-center" style="color: white; margin-top: 5%;">Get started:</h1>
+    <div class="row d-flex justify-content-center gap-4 mt-5">
+        <div class="card col-6 col-xl-3 p-5">
+            <div class="partner d-flex flex-column">
                 <h3>Partner ISV/SaaS Enrollment</h3>
                 <p>For Independent Software Vendors and Software as a Service platforms that include payment processing systems for clients and/or merchants to accept payments from their end consumers. </p>
-                <p></br>Enroll as a partner here:</p>
-                <button class="btn">Partner Enrollment Request</button>
+                <a class="btn btn-lg stretched-link mt-3">Request Partner Enrollment</a>
             </div>
-            <div class="line" style="height:200px; border-left:1px solid black; margin-top:20px;"></div>
-            <div class="merchant" style="display:flex; flex-direction:column; align-items:flex-start; gap:8px; width:415px;">
+        </div>
+        <div class="card col-6 col-xl-3 p-5">
+            <div class="merchant d-flex flex-column">
                 <h3>Merchant Enrollment</h3>
                 <p>For businesses that accept payments directly from end consumers.</p>
-                <p></br>Enroll as a merchant here:</p>
-                <button class="btn">Merchant Enrollment Request</button>
+                <a class="btn btn-lg stretched-link mt-3">Request Merchant Enrollment</a>
             </div>
         </div>
     </div>
