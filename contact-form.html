@@ -12,6 +12,7 @@
         .btn {
             background-color: #F8961F;
             color: white;
+            font-weight: 500;
         }
 
         .btn:hover {
@@ -19,37 +20,42 @@
             color:#F8961F;
         }
         .card {
-                border: none;
-                box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
-                opacity: .90;
+            color: white;
+            background-color:rgba(22, 25, 39, 0.4);
+            border: none;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
         }
+        .form-text {
+            color: white;
+        }
+
     </style>
 </head>
 <body>
     <div class="page" style="font-family: 'Open Sans', sans-serif; background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%); padding-bottom: 75px; height: 100%;">
-        <header class="d-flex justify-content-start flex-wrap" style="padding: 50px;">
+        <header class="d-flex justify-content-start flex-wrap" style="padding: 20px;">
             <img src="https://3playpay.com/wp-content/uploads/2022/05/TPP_logo_reversed_horz3.png" class="col-6 col-md-4 col-xl-2 me-5 mb-5" alt="Triple Play Pay Logo">
             <h2 style="color: white">Partner Enrollment Request</h2>
         </header>
-        <div class="content p-lg-5 m-xl-5">
-            <form class="form card mx-auto d-flex flex-column gap-4 p-lg-5" style="width: 85%; padding: 50px;">
+        <div class="content m-xl-5">
+            <form class="form card mx-auto d-flex flex-column gap-2 p-lg-5" style="width: 85%; padding: 50px;">
                 <h4 class="mt-5 ms-2 ms-lg-5">Business Details</h4>
-                <div class="row ms-lg-5 gap-4">
-                    <div class="col-lg-5 col-12 mt-4">
-                        <label for="bizNameDBA" class="form-label">Business Name / DBA</label>
-                        <input type="text" class="form-control" id="biznameDBA">
+                <div class="row d-flex justify-content-start gap-4 ms-lg-5">
+                    <div class="col-lg-5 col-12 mt-2">
+                        <label for="dba_name" class="form-label">Business Name / DBA</label>
+                        <input required type="text" class="form-control" id="dba_name" name="dba_name" placeholder="Business Name">
                     </div>
-                    <div class="col-lg-5 col-12 mt-4">
-                        <label for="bizName" class="form-label">Legal Business Name</label>
-                        <input type="text" class="form-control" id="bizName">
+                    <div class="col-lg-5 col-12 mt-2">
+                        <label for="legal_name" class="form-label">Legal Business Name</label>
+                        <input required type="text" class="form-control" id="legal_name" name="legal_name" placeholder="Legal Name">
                     </div>
-                    <div class="col-lg-5 col-12 mt-4">
+                    <div class="col-lg-5 col-12 mt-2">
                         <label for="website" class="form-label">Website</label>
-                        <input type="url" class="form-control" id="website">
+                        <input required type="url" class="form-control" id="website" name="website" placeholder="www.tripleplaypay.com">
                     </div>
-                    <div class="col-lg-5 col-12 mt-4">
+                    <div class="col-lg-5 col-12 mt-2">
                     <label for="entity" class="form-label">Entity Type</label>
-                    <select class="form-select" aria-label="Default select example" id="entity">
+                    <select required class="form-select" aria-label="Default select example" id="entity" name="entity" aria-placeholder="Select">
                         <option selected>Select</option>
                         <option value="1">Sole Proprietor</option>
                         <option value="2">LLC/LLP</option>
@@ -58,55 +64,54 @@
                     </div>
                 </div>
                 <h4 class="mt-5 ms-2 ms-lg-5">Account Usage</h4>
-                <div class="row ms-lg-5 gap-4">
-                    <div class="col-lg-5 col-12 mt-4">
+                <div class="row d-flex justify-content-start gap-4 ms-lg-5">
+                    <div class="col-lg-5 col-12 mt-2">
                         <label for="subs" class="form-label">Expected Number of Submerchants</label>
-                        <input type="number" class="form-control" id="subs" aria-describedby="subsHelp">
+                        <input required type="number" class="form-control" id="subs" aria-describedby="subsHelp" name="subs" placeholder="#">
                         <div id="subsHelp" class="form-text">In the next 3 months, how many merchants do you expect to have enrolled?</div>
                     </div>
-                    <div class="col-lg-5 col-12 mt-4">
-                        <label for="transactions" class="form-label">Will this partner account process transactions?</label>
-                        <select class="form-select" aria-label="Select" id="transactions" aria-describedby="transactionsHelp">
+                    <div class="col-lg-5 col-12 mt-2">
+                        <label for="transactions" class="form-label">Will this account process transactions?</label>
+                        <select required class="form-select" aria-label="Select" id="transactions" aria-describedby="transactionsHelp" name="transactions" placeholder="Select">
                             <option selected>Select</option>
                             <option value="1">This account will process transactions</option>
                             <option value="2">Only submerchant accounts will process transactions</option>
                         </select>
                         <div id="transactionsHelp" class="form-text">Note: Partners will always receive full merchant tools as its submerchants will.</div>
                     </div>
-                    <div class="col-lg-5 col-12 mt-4">
-                        <label for="codes" class="form-label">Expected MCC Codes</label>
-                        <select class="form-select" name="codes[]" aria-label="Select" id="codes" aria-describedby="codesHelp" multiple="multiple">
-                            <option selected>Select</option>
-                            <option value="1">MCC Code 1</option>
+                    <div class="col-lg-5 col-12 mt-2">
+                        <label for="mcc_codes" class="form-label">Expected MCC Codes</label>
+                        <select required class="form-select" name="codes[]" aria-label="Select" id="mcc_codes" aria-describedby="codesHelp" multiple="multiple" name="mcc_codes">
+                            <option selected value="1">MCC Code 1</option>
                             <option value="2">MCC Code 2</option>
                             <option value="3">MCC Code 1</option>
                             <option value="4">MCC Code 2</option>
                         </select>
-                        <div id="codesHelp" class="form-text">Select all MCC codes that you and your submerchants will be utilizing.</div>
+                        <div id="codesHelp" class="form-text">Select all MCC codes that you and your submerchants will be utilizing. </br>Don't see your MCC code? <a href = "mailto: csm@tripleplaypay.com">Let us know.</a></div>
                     </div>
                 </div>
                 <h4 class="mt-5 ms-2 ms-lg-5">Account Contact Details</h4>
-                <div class="row ms-lg-5 gap-4">
-                    <div class="col-lg-5 col-12 mt-4">
-                        <label for="firstName" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="firstName">
+                <div class="row d-flex justify-content-start gap-4 ms-lg-5">
+                    <div class="col-lg-5 col-12 mt-2">
+                        <label for="principle_first_name" class="form-label">First Name</label>
+                        <input required type="text" class="form-control" id="principle_first_name" name="principle_first_name" placeholder="First Name">
                     </div>
-                    <div class="col-lg-5 col-12 mt-4">
-                        <label for="lastName" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="lastName">
+                    <div class="col-lg-5 col-12 mt-2">
+                        <label for="principle_last_name" class="form-label">Last Name</label>
+                        <input required type="text" class="form-control" id="principle_last_name" name="principle_last_name" placeholder="Last Name">
                     </div>
-                    <div class="col-lg-5 col-12 mt-4">
-                        <label for="phone" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" id="phone">
+                    <div class="col-lg-5 col-12 mt-2">
+                        <label for="business_phone_number" class="form-label">Phone Number</label>
+                        <input required type="tel" class="form-control" id="business_phone_number" name="business_phone_number" placeholder="(    )    -">
                     </div>
-                    <div class="col-lg-5 col-12 mt-4 mb-5">
+                    <div class="col-lg-5 col-12 mt-2 mb-5">
                         <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email">
+                        <input required type="email" class="form-control" id="email" name="email" placeholder="hello@tripleplaypay.com">
                     </div>
                 </div>
-                <div class="mt-5 mb-5 text-center mx-auto col-8 col-lg-4" style="font-size: large;">
+                <div class="mt-5 mb-5 text-center mx-auto col-8 col-lg-6" style="font-size: large;">
                     <p>The great thing is that the full enrollment process can be speedily completed <strong>within one business day</strong>. </br></br>Once you submit this form, keep an eye out for our emails and you'll accepting payments in no time.</p>
-                    <a class="btn btn-lg" href="" id="submit">Submit</a>
+                    <a class="btn btn-lg mt-3" href="" id="submit">Submit</a>
                 </div>
             </form>
         </div>
